@@ -26,6 +26,7 @@ export * from './types/YXmlElement.js'
 export * from './types/YXmlEvent.js'
 export * from './types/YXmlHook.js'
 export * from './types/YXmlText.js'
+export * from './types/YPNCounter.js'
 
 export * from './structs/AbstractStruct.js'
 export * from './structs/GC.js'

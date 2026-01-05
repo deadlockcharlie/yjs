@@ -32,6 +32,7 @@ export const YXmlElementRefID = 3
 export const YXmlFragmentRefID = 4
 export const YXmlHookRefID = 5
 export const YXmlTextRefID = 6
+export const YPNCounterRefID = 7
 
 /**
  * @private
