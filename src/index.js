@@ -10,14 +10,7 @@ export {
   YXmlHook as XmlHook,
   YXmlElement as XmlElement,
   YXmlFragment as XmlFragment,
-<<<<<<< Updated upstream
-  YXmlEvent,
-  YMapEvent,
-  YArrayEvent,
-  YTextEvent,
-=======
   YPNCounter as PNCounter,
->>>>>>> Stashed changes
   YEvent,
   Item,
   AbstractStruct,

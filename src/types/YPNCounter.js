@@ -12,7 +12,9 @@ import {
   transact,
   warnPrematureAccess,
   UpdateDecoderV1, UpdateDecoderV2, UpdateEncoderV1, UpdateEncoderV2, Doc, Item, // eslint-disable-line
-  YPNCounterRefID
+  YPNCounterRefID,
+  YEvent,
+  Transaction
 } from '../internals.js'
 
 import * as delta from 'lib0/delta'
@@ -265,8 +267,7 @@ export class YPNCounter extends AbstractType {
 
 /**
  * @param {UpdateDecoderV1 | UpdateDecoderV2} _decoder
- * @return {import('../utils/types.js').YType}
- *
+ *  *
  * @private
  * @function
  */
