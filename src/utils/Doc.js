@@ -10,6 +10,7 @@ import {
   YMap,
   YXmlElement,
   YXmlFragment,
+  YPNCounter,
   transact,
   ContentDoc, Item, Transaction, YEvent // eslint-disable-line
 } from '../internals.js'
@@ -276,6 +277,16 @@ export class Doc extends ObservableV2 {
    */
   getMap (name = '') {
     return /** @type {YMap<T>} */ (this.get(name, YMap))
+  }
+
+  /**
+   * @param {string} [name]
+   * @return {YPNCounter<any>}
+   *
+   * @public
+   */
+  getPNCounter (name = '') {
+    return this.get(name, YPNCounter)
   }
 
   /**

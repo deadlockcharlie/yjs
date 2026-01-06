@@ -263,7 +263,7 @@ export class TestConnector {
  * @param {t.TestCase} tc
  * @param {{users?:number}} conf
  * @param {InitTestObjectCallback<T>} [initTestObject]
- * @return {{testObjects:Array<any>,testConnector:TestConnector,users:Array<TestYInstance>,array0:Y.Array<any>,array1:Y.Array<any>,array2:Y.Array<any>,map0:Y.Map<any>,map1:Y.Map<any>,map2:Y.Map<any>,map3:Y.Map<any>,text0:Y.Text,text1:Y.Text,text2:Y.Text,xml0:Y.XmlElement,xml1:Y.XmlElement,xml2:Y.XmlElement}}
+ * @return {{testObjects:Array<any>,testConnector:TestConnector,users:Array<TestYInstance>,array0:Y.Array<any>,array1:Y.Array<any>,array2:Y.Array<any>,map0:Y.Map<any>,map1:Y.Map<any>,map2:Y.Map<any>,map3:Y.Map<any>,text0:Y.Text,text1:Y.Text,text2:Y.Text,xml0:Y.XmlElement,xml1:Y.XmlElement,xml2:Y.XmlElement,pncounter0:Y.YPNCounter,pncounter1:Y.YPNCounter,pncounter2:Y.YPNCounter}}
  */
 export const init = (tc, { users = 5 } = {}, initTestObject) => {
   /**
@@ -290,6 +290,7 @@ export const init = (tc, { users = 5 } = {}, initTestObject) => {
     result['map' + i] = y.getMap('map')
     result['xml' + i] = y.get('xml', Y.XmlElement)
     result['text' + i] = y.getText('text')
+    result['pncounter' + i] = y.getPNCounter('pncounter')
   }
   testConnector.syncAll()
   result.testObjects = result.users.map(initTestObject || (() => null))

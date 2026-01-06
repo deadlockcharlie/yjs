@@ -17,7 +17,24 @@ import {
   Transaction
 } from '../internals.js'
 
-import * as delta from 'lib0/delta'
+/**
+ * @template T
+ * @extends YEvent<YPNCounter<T>>
+ * Event that describes the changes on a YPNCounter.
+ */
+
+export class YPNCounterEvent extends YEvent {
+  /**
+   * @param {YPNCounter<T>} ypncounter The YPNCounter that changed.
+   * @param {Transaction} transaction
+   * @param {Set<any>} subs The keys that changed.
+   */
+  constructor (ypncounter, transaction, subs) {
+    super(ypncounter, transaction)
+    this.keysChanged = subs
+  }
+}
+
 
 /**
  * @template PNCounterType
@@ -31,7 +48,7 @@ import * as delta from 'lib0/delta'
  *
  * The total value is computed as sum(all p:*) - sum(all n:*)
  *
- * @extends AbstractType<delta.MapDelta<{[K in string]:number}>>
+ * @extends AbstractType<YPNCounterEvent<PNCounterType>>
  */
 export class YPNCounter extends AbstractType {
   constructor () {
@@ -121,7 +138,6 @@ export class YPNCounter extends AbstractType {
 
   /**
    * Get the current counter value (sum of positive - sum of negative)
-   *
    * @return {number}
    */
   get value () {
