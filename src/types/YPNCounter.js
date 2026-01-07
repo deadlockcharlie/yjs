@@ -7,6 +7,7 @@ import {
   typeMapDelete,
   typeMapSet,
   typeMapGet,
+  callTypeObservers,
   typeMapHas,
   createMapIterator,
   transact,
@@ -101,6 +102,19 @@ export class YPNCounter extends AbstractType {
     })
     return counter
   }
+
+  /**
+   * Creates YPNCounterEvent and calls observers.
+   *
+   * @param {Transaction} transaction
+   * @param {Set<null|string>} parentSubs Keys changed on this type. `null` if list was modified.
+   */
+
+  _callObserver( transaction, parentSubs) {
+    const event = new YPNCounterEvent(this, transaction, parentSubs)
+    callTypeObservers(this, transaction, event)
+  }
+
 
   /**
    * Transforms this Shared Type to a JSON object.
