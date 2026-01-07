@@ -85,6 +85,13 @@ export class YPNCounter extends AbstractType {
   }
 
   /**
+   * @return {YPNCounter<PNCounterType>}
+   */
+  _copy () {
+    return new YPNCounter()
+  }
+
+  /**
    * Makes a copy of this data type that can be included somewhere else.
    *
    * Note that the content is only readable _after_ it has been included somewhere in the Ydoc.
