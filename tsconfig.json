@@ -13,6 +13,7 @@
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "nodenext",
+    "skipLibCheck": true,
     "paths": {
       "yjs": ["./src/index.js"],
       "yjs/internals": ["./src/internals.js"],
