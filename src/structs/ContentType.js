@@ -6,7 +6,8 @@ import {
   readYXmlFragment,
   readYXmlHook,
   readYXmlText,
-  UpdateDecoderV1, UpdateDecoderV2, UpdateEncoderV1, UpdateEncoderV2, StructStore, Transaction, Item, YEvent, AbstractType // eslint-disable-line
+  UpdateDecoderV1, UpdateDecoderV2, UpdateEncoderV1, UpdateEncoderV2, StructStore, Transaction, Item, YEvent, AbstractType, // eslint-disable-line
+  readYPNCounter
 } from '../internals.js'
 
 import * as error from 'lib0/error'
@@ -22,7 +23,8 @@ export const typeRefs = [
   readYXmlElement,
   readYXmlFragment,
   readYXmlHook,
-  readYXmlText
+  readYXmlText,
+  readYPNCounter
 ]
 
 export const YArrayRefID = 0
